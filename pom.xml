@@ -21,7 +21,13 @@
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>4.40.0</version>
-            <scope>compile</scope>
+
+        </dependency>
+
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-support</artifactId>
+            <version>4.40.0</version> <!-- or your selenium version -->
         </dependency>
 
         <!-- Source: https://mvnrepository.com/artifact/org.testng/testng -->

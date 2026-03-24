@@ -11,6 +11,7 @@ public class DashboardTest extends BaseTest {
 
 @Test
     public void verifyCategoryCounts(){
+    driver.get("https://naveenautomationlabs.com/opencart/index.php?route=product/category&path=18");
 
     DashboardPage dashboardPage = new DashboardPage(driver);
 
