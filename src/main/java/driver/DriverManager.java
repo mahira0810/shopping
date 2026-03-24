@@ -5,10 +5,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class DriverManager {
 
-     protected WebDriver driver;
+     protected static WebDriver driver;
+    //private static WebDriver driver;//But this will fail in parallel execution
 
-    public WebDriver initDriver() {
-        driver = new ChromeDriver();
+    public static WebDriver initDriver() {
+        if(driver == null) {
+            driver = new ChromeDriver();
+        }
         return driver;
     }
 

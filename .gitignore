@@ -36,3 +36,61 @@ build/
 
 ### Mac OS ###
 .DS_Store
+
+# ========================
+# OS generated files
+# ========================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ========================
+# Java / Maven
+# ========================
+*.class
+*.jar
+*.war
+*.ear
+*.iml
+*.log
+target/
+out/
+
+# ========================
+# IntelliJ IDEA
+# ========================
+.idea/
+*.iws
+*.ipr
+*.iml
+*.classpath
+
+# ========================
+# Eclipse
+# ========================
+.project
+.settings/
+bin/
+
+# ========================
+# VS Code
+# ========================
+.vscode/
+
+# ========================
+# TestNG / Selenium / Logs
+# ========================
+test-output/
+allure-results/
+screenshots/
+reports/
+*.png
+*.jpg
+*.html
+
+# ========================
+# Environment / Secrets
+# ========================
+.env
+*.properties
+*.key
