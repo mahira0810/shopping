@@ -43,26 +43,25 @@ public class ElementUtils extends DriverManager {
     //Get shadow root element
     public WebElement getShadowElement(WebDriver driver, WebElement host, String cssSelector) {
 
-        WebElement shadowHost= driver.findElement(By.xpath("Shadow host"));
+        WebElement shadowHost = driver.findElement(By.xpath("Shadow host"));
 
         JavascriptExecutor js = (JavascriptExecutor) driver;
         WebElement shadowRoot = (WebElement) js.executeScript("return arguments[0].shadowRoot", host);
         return shadowRoot.findElement(By.cssSelector(cssSelector));
     }
 
-    public void getNestedShadowElement(WebDriver driver, String selector){
-        JavascriptExecutor js= (JavascriptExecutor) driver;
-          //Locate outer host
+    public void getNestedShadowElement(WebDriver driver, String selector) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        //Locate outer host
         WebElement outerHost = driver.findElement(By.cssSelector("outer-host"));
         //Get outer shadow root
-        WebElement outerShadowRoot = (WebElement)js.executeScript("return arguments[0].shadowRoot", outerHost);
+        WebElement outerShadowRoot = (WebElement) js.executeScript("return arguments[0].shadowRoot", outerHost);
         //locate inner host
         WebElement innerHost = outerShadowRoot.findElement(By.cssSelector("inner-host"));
         //Get inner shadow root
         WebElement innerShadowRoot = (WebElement) js.executeScript("return arguments[0].shadowRoot", innerHost);
-                //locate target element
+        //locate target element
         WebElement button = innerShadowRoot.findElement(By.cssSelector(selector));
         button.click();
     }
-
 }
