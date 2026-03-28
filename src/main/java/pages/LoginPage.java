@@ -21,14 +21,20 @@ public class LoginPage {
     @FindBy(xpath = "(//a[text()='Forgotten Password'])[1]")
     private WebElement forgetPasswordLink;
 
-    public LoginPage(WebDriver driver) {
+    public LoginPage(WebDriver driver, WebElement emailInput, WebElement passwordInput, WebElement loginButton, WebElement forgetPasswordLink) {
         this.driver = driver;
+        this.emailInput = emailInput;
+        this.passwordInput = passwordInput;
+        this.loginButton = loginButton;
+        this.forgetPasswordLink = forgetPasswordLink;
         PageFactory.initElements(driver, this);
+    }
+
+    public LoginPage(WebDriver driver) {
     }
 
     public void enterEmail(){
         emailInput.sendKeys("test@ui.com");
-
     }
     public void enterPassword(){
         passwordInput.sendKeys("test123");
@@ -43,6 +49,4 @@ public class LoginPage {
         clickLoginButton();
         return new AccountPage(this.driver);
     }
-
-
 }
